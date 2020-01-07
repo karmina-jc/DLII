@@ -13,28 +13,6 @@ function bestMovie() {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { console.log(data);
-        root.innerHTML +=`<div class="wrap">
-          <div class="tarjeta">
-          <div class="infopoke">
-           <h4>${data.Title}</h4>
-           <p>${data.Year}</p>
-           <div class="imagenpoke">
-            <img class="grande" src="${data.Poster}" alt="poster"></img>
-            </div>
-            
-            </div>
-            <div class="atras">
-            <img src="${data.poster}" alt="imagen poke"></img>
-            <lo>
-                <li>Tipo: ${paramPoke.type}</li>
-                <li>Altura: ${paramPoke.height}</li>
-                <li>Peso: ${paramPoke.height}</li>
-                <li>Debilidad: ${paramPoke.weaknesses}</li>
-            </lo>
-            </div>
-            </div>
-            </div>
-            `;
         })
     })
 }
@@ -70,7 +48,16 @@ function actor() {
     bestActor.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
-        .then(data => { console.log(data.Actors);
+        .then(data => { console.log(data.imdbID);
+            root.innerHTML +=`<div class="wrap">
+          <div class="tarjetaActors">
+           <button id="star">✩</button>
+           <h4>${data.Title}</h4>
+           <p>${data.Year}</p>
+            <div>
+            <img class="imgActor" src="${data.Poster}" alt="poster"></img>
+            </div>
+           </div>`;
         })
     })
 }
