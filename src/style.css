@@ -1,21 +1,6 @@
-.tarjeta{
-    margin: 15px;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column;
-    width: 350px;
-    height: 350px;
-    transform-style: preserve-3d;
-    transition: 0.5s ease;
-    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-    color: rgb(5, 126, 124);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    background-image: url(img/fondoJunto3.png);
-    background-repeat: no-repeat; 
-    background-size: cover;  
-    border-radius: 8px;
-    
+.tarjetaMovies{
+    border: 1px solid black;  
 }
+
+
+
