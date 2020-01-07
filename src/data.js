@@ -22,6 +22,7 @@ function animatedMovie() {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { console.log(data)
+            
         });
     });
 }

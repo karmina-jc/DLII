@@ -1,3 +1,7 @@
+
+.tarjetaMovies{
+    border: 1px solid black;  
+}
 .tarjetaActors{
   border: 1px solid black;
   max-width: 200px;
