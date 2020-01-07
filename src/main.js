@@ -13,8 +13,8 @@ const bestAnimatedFilm = ["tt1979376", "tt4520988", "tt2386490", "tt9426210", "t
 const bestForeignFilm = ["tt6751668", "tt8291806", "tt10199590", "tt7921248", "tt6062774", "tt10199640"]
 const bestDirector = ["tt1302006", "tt7653254", "tt8579674", "tt7131622", "tt6751668"]
 const bestActor = ["tt7653254", "tt7286456", "tt2066051", "tt8291806"]
-const bestActrees = ["tt7653254", "tt3281548", "tt6394270", "tt7549996", ]
-const bestSupportingActrees = ["tt7653254", "tt3281548", "tt8637428", "tt6394270", ]
+const bestActress = ["tt7653254", "tt3281548", "tt6394270", "tt7549996", ]
+const bestSupportingActress = ["tt7653254", "tt3281548", "tt8637428", "tt6394270", ]
 const bestSupportingActor = ["tt1302006", "tt7131622", "tt3224458", "tt8404614", ]
 
 btnbestFilm.addEventListener("click", bestMovie)
@@ -73,7 +73,7 @@ function actor() {
     })
 }
 
-btnActriz.addEventListener("click", actrees)
+btnActriz.addEventListener("click", actress)
 
 function actrees() {
     bestActrees.forEach(element => {
@@ -84,10 +84,10 @@ function actrees() {
     })
 }
 
-btnSupportingActrees.addEventListener("click", supportingActrees)
+btnSupportingActress.addEventListener("click", supportingActress)
 
 function supportingActrees() {
-    bestSupportingActrees.forEach(element => {
+    bestSupportingActress.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { console.log(data);
