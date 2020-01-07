@@ -1,4 +1,18 @@
 
+.nav-wrapper{
+    color: black;
+}
+
+.introText{
+    text-align: right;
+}
+body{
+	background:black;
+}
+
+.imgBtn{
+    size: 60px 70px;
+}
 .tarjetaMovies{
     border: 1px solid black;  
 }
