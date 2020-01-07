@@ -13,15 +13,6 @@ function bestMovie() {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { console.log(data);
-        root.innerHTML +=`<div class="wrap">
-          <div class="tarjetaMovies">
-           <h4>${data.Title}</h4>
-           <p>${data.Year}</p>
-           <div class="imagenpeli">
-            <img class="grande" src="${data.Poster}" alt="poster"></img>
-            </div>
-            </div>
-        </div> `;
         })
     })
 }
@@ -58,7 +49,16 @@ function actor() {
     bestActor.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
-        .then(data => { console.log(data.Actors);
+        .then(data => { console.log(data.imdbID);
+            root.innerHTML +=`<div class="wrap">
+          <div class="tarjetaActors">
+           <button id="star">✩</button>
+           <h4>${data.Title}</h4>
+           <p>${data.Year}</p>
+            <div>
+            <img class="imgActor" src="${data.Poster}" alt="poster"></img>
+            </div>
+           </div>`;
         })
     })
 }

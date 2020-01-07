@@ -16,4 +16,4 @@ btnDirector.addEventListener("click", myData.director);
 btnActor.addEventListener("click", myData.actor);
 btnActriz.addEventListener("click", myData.actrees);
 btnSupportingActrees.addEventListener("click", myData.supportingActrees);
-btnSupportingActor.addEventListener("click", myData.supportingActor);
+btnSupportingActor.addEventListener("click", myData.supportingActor)

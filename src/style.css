@@ -1,6 +1,12 @@
+
 .tarjetaMovies{
     border: 1px solid black;  
 }
-
-
-
+.tarjetaActors{
+  border: 1px solid black;
+  max-width: 200px;
+  cursor: pointer;
+}
+.imgActor{
+    max-width: 100px;
+}
