@@ -48,7 +48,7 @@ La [Pauta de Testeo](https://docdro.id/INZmaXl) fue escrita para obtener resulta
 
 El testeo fue pensado para ser desarrollado en varias personas, sin embargo, por tiempo fue realizado solo en una oportunidad y no se logró grabar la sesión de testeo.
 
-    **Usuario:** Paulette
+    Paulette
     Joven de 19 años, gusta del cine, usuaria de RRSS (principalmente Instagram).
     En la primera página le resulta intuitivo apretar uno de los botones antes de leer las indicaciones que estan en el subtitulo. Esto la hace notar 
     luego que no existe una parte que nos diga en que categoría de película estamos una vez que se abren las nominadas.
