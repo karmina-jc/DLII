@@ -17,6 +17,7 @@ body{
     border: 1px solid black;  
 }
 .tarjetaActors{
+color: white;
   border: 1px solid black;
   max-width: 200px;
   cursor: pointer;
