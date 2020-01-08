@@ -1,6 +1,7 @@
 
 .nav-wrapper{
     color: black;
+    
 }
 
 .introText{
@@ -10,18 +11,40 @@ body{
 	background:black;
 }
 
-.imgBtn{
-    size: 60px 70px;
+.sectionMovies{
+    margin: 0%;
+    color: black;
 }
+
 .tarjetaMovies{
     border: 1px solid black;  
 }
 .tarjetaActors{
-color: white;
   border: 1px solid black;
   max-width: 200px;
   cursor: pointer;
 }
 .imgActor{
     max-width: 100px;
+}
+
+.img.responsive-img{
+    border-image-width: 24px;
+    border-image-slice: 54 85;
+    border-image-outset: 6px;
+    border-image-repeat: repeat repeat;
+
+}
+#bestFilm, #bestForeignFilm,#bestAnimatedFilm, #bestDirector, #bestActor, #bestActrees, #bestSupportingActrees, #bestSupportingActor {
+    background-color:black;
+    color: black;
+    border-radius: 20%;
+    border-style:dotted;
+   
+}
+
+
+
+.container{
+justify-content: space-between;
 }
