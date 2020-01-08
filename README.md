@@ -22,16 +22,20 @@
 Para diseñar nuestro producto, partimos realizando sketchs de las ideas que ibamos teniendo. En la imagen 1 se puede ver la primera aproximación que tuvimos de la página, nuestra primera idea consistia en que el usuario pudiera filtrar en base a sus intereses y se le presentara la película con su resumen para que el usuario decidiera si quería verla o no.
 
 ![Imagen 1](https://i.imgur.com/382FHnX.jpg)
+Imagen 1
+
 
 En la imagen 2 se puede ver el primer acercamiento al diseño luego de que la idea cambiara a ofrecer una página que agrupe los nominados a los premios Oscar y le permitiera al usuario seleccionar a sus preferidos para ganar las estatuillas y compartirlo por redes sociales. 
 Esta idea sería discutida posteriormente en el grupo para llegar a dos opciones de diseño sobre la que se trabajo.
 
 ![Imagen 2](https://i.imgur.com/n28yub9.jpg)
+Imagen 2
 
 
 En la imagen 3 se observa un prototipo sencillo de la opción que finalmente sería la que utilizaríamos como base para diseñar nuestro sitio. Tiene una barra horizontal enfatizada que presenta las peliculas dentro de cada categoría, dentro de la barra hay un scroll horizontal y al costado una breve presentación de la película junto a un botón que le permite seleccionarla como favorita para ganadora.
 
 ![Imagen 3](https://i.imgur.com/8CpXRBx.jpg?1)
+Imagen 3
 
 
  Posterior a todo esto se utilizó la herramienta Figma para realizar un prototipo de las interacciones básicas de la página.
