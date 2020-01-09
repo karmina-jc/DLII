@@ -42,7 +42,11 @@ Imagen 3
 
 [Prototipo de Alta Fidelidad](https://www.figma.com/file/5INwwKD86u95R8hAoBy6TI/MyTopsv2?node-id=0%3A1)
 
-# testeo
+Imagen final de la web en el LocalHost
+
+![Imagen web](./src/img/app-final-web.jpg )
+
+# Testeo
 
 La [Pauta de Testeo](https://docdro.id/INZmaXl) fue escrita para obtener resultados utiles y uniformes de todos los testeos que se fuesen a realizar.
 
