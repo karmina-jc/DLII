@@ -6,66 +6,149 @@ const bestActor = ["tt7653254", "tt7286456", "tt2066051", "tt8291806"]
 const bestActrees = ["tt7653254", "tt3281548", "tt6394270", "tt7549996"]
 const bestSupportingActrees = ["tt7653254", "tt3281548", "tt8637428", "tt6394270"]
 const bestSupportingActor = ["tt1302006", "tt7131622", "tt3224458", "tt8404614"]
-const sectionMovies = document.getElementById("movies");
+const containerMovies = document.getElementById("container");
 
-function movieCard(data) {
-    sectionMovies.innerHTML +=
+function bestActorCard (data){
+    if (data === "tt7653254"){
+        containerMovies.innerHTML +=
     `<div class="wrap">
       <div class="tarjetaActors">
-        <h3>${data.Title}</h3>
-        <p>${data.Genre}</p>
         <button id="star">✩</button>
-        <img class="imgActor" src="${data.Poster}" alt="poster"></img>
+        <img class="imgActor" src="actorsimg/adam-driver-img.jpg" value="Adam Driver" alt="poster"></img>
       </div>
     </div>`
+    } if (data === "tt7286456"){
+        containerMovies.innerHTML +=
+    `<div class="wrap">
+      <div class="tarjetaActors">
+        <button id="star">✩</button>
+        <img class="imgActor" src="actorsimg/joaquin-phoenix-img.jpg" value="Joaquin Phoenix" alt="poster"></img>
+      </div>
+    </div>`
+    } if (data === "tt2066051"){
+        containerMovies.innerHTML +=
+    `<div class="wrap">
+      <div class="tarjetaActors">
+        <button id="star">✩</button>
+        <img class="imgActor" src="actorsimg/taron-egerton-img.jpg" value="Taron Egerton" alt="poster"></img>
+      </div>
+    </div>`
+    } if (data === "tt8291806"){
+        containerMovies.innerHTML +=
+    `<div class="wrap">
+      <div class="tarjetaActors">
+        <button id="star">✩</button>
+        <img class="imgActor" src="actorsimg/antonio-banderas-img.jpg" value="Antonio Banderas" alt="poster"></img>
+      </div>
+    </div>`
+    }     
 }
+/*
+<div id="fullInfo" class="col s12 m6">
+      <div class="row">
+        <div class="col s12 m4">
+          <img src=${data.Poster} alt="" class="responsive-img">
+        </div>
+        <div class="col s12 m8">
+          <h3 class="black-text">${data.Title}</h3>
+          <p>${data.Plot}</p>
+        </div>        
+      </div>
+*/
 
 function bestMovie() {
-    sectionMovies.innerHTML=""
+    containerMovies.innerHTML=""
     bestFilm.forEach(element => {
         fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => {
-            const movies = data
-            movieCard(movies)
+          containerMovies.innerHTML +=
+          `<div id="category-1" class="row white">    
+           </div>
+           <div class="tarjetaMovies col s12 m6">
+             <div class="row">
+              <p>${data.Title}<p>
+              <img src=${data.Poster} alt="" class="responsive-img">
+              <button id="star">✩</button>
+             </div>
+            </div>
+           </div>
+          </div>
+          `
+        let btnStar= document.getElementById("star")
+        btnStar.addEventListener('click', () => {              
+          let selectTitle = document.getElementById("winnerBestMovie")
+          selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
         })  
+      })  
     })
 }
 
 function animatedMovie() {
-    sectionMovies.innerHTML=""
+    containerMovies.innerHTML=""
     bestAnimatedFilm.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { 
-            const movies = data
-            movieCard(movies)            
-        });
+          containerMovies.innerHTML +=
+          `<div id="category-1" class="row white">    
+           </div>
+           <div class="tarjetaMovies col s12 m6">
+             <div class="row">
+              <p>${data.Title}<p>
+              <img src=${data.Poster} alt="" class="responsive-img">
+              <button id="star">✩</button>
+             </div>
+            </div>
+           </div>
+          </div>
+          `
+        let btnStar= document.getElementById("star")
+        btnStar.addEventListener('click', () => {              
+          let selectTitle = document.getElementById("winnerAnimatedMovie")
+          selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
+        })            
+      });
     });
 }
 
 function foreignFilm() {
-    sectionMovies.innerHTML=""
+    containerMovies.innerHTML=""
     bestForeignFilm.forEach(element => {
-        fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+        fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
-        .then(data => { 
-            const movies = data
-            movieCard(movies)
-        })
+        .then(data => { containerMovies.innerHTML +=
+          `<div id="category-1" class="row white">    
+           </div>
+           <div class="tarjetaMovies col s12 m6">
+             <div class="row">
+              <p>${data.Title}<p>
+              <img src=${data.Poster} alt="" class="responsive-img">
+              <button id="star">✩</button>
+             </div>
+            </div>
+           </div>
+          </div>
+          `
+        let btnStar= document.getElementById("star")
+        btnStar.addEventListener('click', () => {              
+          let selectTitle = document.getElementById("winnerForeignMovie")
+          selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
+        }) 
+      })
     })
 }
 
 function director() {
-    sectionMovies.innerHTML=""
+    containerMovies.innerHTML=""
     bestDirector.forEach(element => {
     fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
     .then(res => res.json())
     .then(data => { 
         const movies = data
-          sectionMovies.innerHTML +=
+        containerMovies.innerHTML +=
           `<div class="wrap">
-          <div class="tarjetaActors">
+          <div class="tarjetaMovies">
               <h4>${data.Title}</h4>
               <p>${data.Genre}</p>
               <img class="imgActor" src="${data.Poster}" alt="poster"></img>
@@ -73,48 +156,130 @@ function director() {
               <h3>${data.Director}</h3>
           </div>
           </div>`
+          let btnStar= document.getElementById("star")
+          btnStar.addEventListener('click', () => {              
+            let selectTitle = document.getElementById("winnerDirector")
+            selectTitle.innerHTML =`<p style="color:white">${data.Director}</p>`
+          })
         })
     })
 }
 function actor() {
-    sectionMovies.innerHTML=""
-    bestActor.forEach(element => {
-        fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
-        .then(res => res.json())
-        .then(data => {
-            const movies = data
-            movieCard(movies)            
-        })        
-    })
+  containerMovies.innerHTML=""
+  bestActor.forEach(element => {
+    fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+      .then(res => res.json())
+      .then(data => { 
+        containerMovies.innerHTML +=
+        `<div id="category-1" class="row white">    
+         </div>
+          <div id="tarjetaMovies" class="tarjetaMovies col s12 m6">
+            <div class="row">
+            <p>${data.Title}<p>
+            <img src=${data.Poster} alt="" class="responsive-img">
+            <button id="star">✩</button>
+          </div>
+         </div>
+         </div>
+        </div>`
+        let btnStar= document.getElementById("star")
+        btnStar.addEventListener('click', () => {              
+          let selectTitle = document.getElementById("winnerBestActor")
+          selectTitle.innerHTML =`<p style="color:white">Name Actor</p>`
+        }) 
+        let btnActor = document.getElementById("tarjetaMovies")
+        btnActor.addEventListener('click', () => {
+          let divActor = document.getElementById("container")
+          let value = data.imdbID
+          console.log(value)       
+          divActor.innerHTML = ""
+          divActor.innerHTML = bestActorCard(value)    
+        })
+    })              
+  })
 }
 
 function actrees() {
-    sectionMovies.innerHTML=""
+    containerMovies.innerHTML=""
     bestActrees.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
-        .then(data => { console.log(data);
-        })
+        .then(data => { 
+          containerMovies.innerHTML +=
+          `<div id="category-1" class="row white">    
+           </div>
+           <div class="tarjetaMovies col s12 m6">
+             <div class="row">
+              <p>${data.Title}<p>
+              <img src=${data.Poster} alt="" class="responsive-img">
+              <button id="star">✩</button>
+             </div>
+            </div>
+           </div>
+          </div>
+          `
+        let btnStar= document.getElementById("star")
+        btnStar.addEventListener('click', () => {              
+          let selectTitle = document.getElementById("winnerBestActress")
+          selectTitle.innerHTML =`<p style="color:white">Name Actricess</p>`
+        })          
+      })  
     })
 }
-
 function supportingActrees() {
-    sectionMovies.innerHTML=""
+    containerMovies.innerHTML=""
     bestSupportingActrees.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
-        .then(data => { console.log(data);
-        })
+        .then(data => {
+          containerMovies.innerHTML +=
+          `<div id="category-1" class="row white">    
+           </div>
+           <div class="tarjetaMovies col s12 m6">
+             <div class="row">
+              <p>${data.Title}<p>
+              <img src=${data.Poster} alt="" class="responsive-img">
+              <button id="star">✩</button>
+             </div>
+            </div>
+           </div>
+          </div>
+          `
+        let btnStar= document.getElementById("star")
+        btnStar.addEventListener('click', () => {              
+          let selectTitle = document.getElementById("winnerSupportActress")
+          selectTitle.innerHTML =`<p style="color:white">NAme Suporting Actress</p>`
+        })           
+      })  
     })
 }
-
 function supportingActor() {
-    sectionMovies.innerHTML=""
-    bestSupportingActor.forEach(element => {
-        fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
-        .then(res => res.json())
-        .then(data => { console.log(data);
-        })
+  containerMovies.innerHTML=""
+  bestSupportingActor.forEach(element => {
+    fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      containerMovies.innerHTML +=
+      `<div id="category-1" class="row white">    
+        </div>
+        <div id="tarjetaMovies" class="tarjetaMovies col s12 m6">
+          <div class="row">
+          <p>${data.Title}<p>
+          <img src=${data.Poster} alt="" class="responsive-img">
+          <button id="star">✩</button>
+        </div>
+        </div>
+        </div>
+      </div>`
+      let btnStar= document.getElementById("star")
+      btnStar.addEventListener('click', () => {              
+        let selectTitle = document.getElementById("winnerSupportActor")
+        selectTitle.innerHTML =`<p style="color:white">NAme Suporting Actress</p>`
+      }) 
     })
+  })
 }
 export {bestMovie, animatedMovie, foreignFilm, director, actor, actrees, supportingActrees, supportingActor}
+
+// imdbID
