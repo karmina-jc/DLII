@@ -39,7 +39,7 @@ body{
     background-color:black;
     color: black;
     border-radius: 20%;
-    border-style:dotted;
+    border-style:solid;
    
 }
 
@@ -47,4 +47,16 @@ body{
 
 .container{
 justify-content: space-between;
+}
+
+p{
+color:white
+font-size: 12;
+}
+
+.page-footer{
+    background-color:black;
+}
+.iconos{
+    size: 20px 20px;
 }
