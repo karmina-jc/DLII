@@ -1,5 +1,5 @@
 # Data Lovers Movie 🎬
-![logo](./src/img/logo.png "logo")
+![logo](./src/img/logoblack.png "logo")
 
  My tops te permite escoger tus peliculas favoritas y crear tu propia lista para compartirla en tus redes sociales. En nuestra versión Oscars Edition podrás escoger tus posibles ganadores a los premios Oscars 2020 y compartirlo con tus amigos. ¡Divierte! 
 

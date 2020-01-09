@@ -78,3 +78,15 @@ body{
     width: 60px;
     height: 60px;
 }
+
+p{
+color:white
+font-size: 12;
+}
+
+.page-footer{
+    background-color:black;
+}
+.iconos{
+    size: 20px 20px;
+}
