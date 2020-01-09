@@ -14,7 +14,6 @@ body{
 }
 .tarjetaMovies{
     color: white;
-    border: 1px solid white;
     max-width: 200px;
     cursor: pointer;
 }
@@ -44,18 +43,31 @@ body{
     flex-flow: row wrap;
     justify-content: space-between;
 }
+.container button{
+    margin: 5px;
+}
 .winners{
     background-image: url("img/win.png");
+    background-repeat: no-repeat;
     color: white;
     text-align: center;
     
 }  
+.winners h5{
+    font-size: 20px;
+    padding: none;
+    border: none;
+    margin: none;
+} 
+.winners h6{
+    font-size: 20px;
+} 
 #compartir{
     text-align: center;
 } 
 .win{
-    padding-top: 20px;
-    padding-bottom: 50px;
+    padding: 35px;
+    
 }
 .footer{
     background-color: black;
