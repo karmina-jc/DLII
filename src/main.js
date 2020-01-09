@@ -9,7 +9,7 @@ const btnSupportingActrees = document.getElementById("bestSupportingActrees");
 const btnSupportingActor = document.getElementById("bestSupportingActor");
 
 
-btnbestFilm.addEventListener("click", myData.bestMovie);
+btnbestFilm.addEventListener("click", myData.bestMovie );
 btnAnimatedFilm.addEventListener("click", myData.animatedMovie);
 btnForeignFilm.addEventListener("click", myData.foreignFilm);
 btnDirector.addEventListener("click", myData.director);
