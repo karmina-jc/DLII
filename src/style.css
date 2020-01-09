@@ -51,11 +51,9 @@ body{
     background-repeat: no-repeat;
     color: white;
     text-align: center;
-    
-    
 }  
 .winners h5{
-    font-size: 20px;
+    font-size: 15px;
     padding: none;
     border: none;
     margin: none;
@@ -80,7 +78,7 @@ body{
 }
 
 p{
-color:white
+color:white;
 font-size: 12;
 }
 

@@ -7,6 +7,7 @@ const bestActrees = ["tt7653254", "tt3281548", "tt6394270", "tt7549996"]
 const bestSupportingActrees = ["tt7653254", "tt3281548", "tt8637428", "tt6394270"]
 const bestSupportingActor = ["tt1302006", "tt7131622", "tt3224458", "tt8404614"]
 const containerMovies = document.getElementById("container");
+const btnSiguiente = document.getElementById("siguiente");
 
 function bestActorCard (data){
     if (data === "tt7653254"){
@@ -43,21 +44,42 @@ function bestActorCard (data){
     </div>`
     }     
 }
-/*
-<div id="fullInfo" class="col s12 m6">
-      <div class="row">
-        <div class="col s12 m4">
-          <img src=${data.Poster} alt="" class="responsive-img">
-        </div>
-        <div class="col s12 m8">
-          <h3 class="black-text">${data.Title}</h3>
-          <p>${data.Plot}</p>
-        </div>        
-      </div>
-*/
+
+function pageOne(){
+  containerMovies.innerHTML = 
+  `<div class="row">   
+  <div class="col s12 m3 bg-bestfilm">
+      <button id="bestFilm"><img class=" border-color-black responsive-img " src="img/picture.jpg"></button>
+  </div>
+  <div class="col s12 m3">
+      <button id="bestForeignFilm"><img class="responsive-img "src="img/language.jpg"></button>
+  </div>     
+  <div class="col s12 m3">
+      <button id="bestAnimatedFilm"><img class="responsive-img"src="img/animated.jpg"></button>
+  </div>      
+  <div class="col 12 m3">
+      <button id="bestDirector"><img class="responsive-img"src="img/directing.jpg"></button>        
+  </div>      
+  <div class="col s12 m3">
+      <button id="bestActor"><img class=" responsive-img"src="img/actor.jpg"></button>
+  </div>
+  <div class="col s12 m3">
+      <button id="bestActrees"><img class=" responsive-img" src="img/actress.jpg"></button>        
+  </div>
+  <div class="col s12 m3">
+      <button id="bestSupportingActrees"><img class="responsive-img" src="img/s-actress.jpg"></button> 
+  </div>
+  <div class="col s12 m3">
+    <button id="bestSupportingActor"><img class="responsive-img" src="img/s-actor.jpg"></button>
+  </div>`
+  
+  btnSiguiente.style.display = "none"
+}
 
 function bestMovie() {
     containerMovies.innerHTML=""
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne);
     bestFilm.forEach(element => {
         fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
@@ -73,7 +95,7 @@ function bestMovie() {
           <span class="card-title"><strong>${data.Title}</strong></spam>
           </div>
           <div class="card-action">
-              <button class="btn-flat" id="star"> ⭐️  </button>
+            <a id="star" class="waves-effect waves-light btn black">⭐️</a>
             </div>
           </div>
           </div>
@@ -83,7 +105,7 @@ function bestMovie() {
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
           let selectTitle = document.getElementById("winnerBestMovie")
-          selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
+          selectTitle.innerHTML =`${data.Title}`
         })  
       })  
     })
@@ -91,27 +113,34 @@ function bestMovie() {
 
 function animatedMovie() {
     containerMovies.innerHTML=""
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestAnimatedFilm.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { 
           containerMovies.innerHTML +=
           `<div id="category-1" class="row white">    
-           </div>
-           <div class="tarjetaMovies col s12 m6">
-             <div class="row">
-              <p>${data.Title}<p>
-              <img src=${data.Poster} alt="" class="responsive-img">
-              <button id="star">✩</button>
-             </div>
-            </div>
-           </div>
           </div>
-          `
+       <div class="tarjetaMovies col s12 m6">
+         <div class="card black">
+          <div class="card-img">
+          <img src=${data.Poster} alt="" class="responsive-img">
+         <div class="card-content white-text">
+         <span class="card-title"><strong>${data.Title}</strong></spam>
+         </div>
+         <div class="card-action">
+           <a id="star" class="waves-effect waves-light btn black">⭐️</a>
+           </div>
+         </div>
+         </div>
+        </div>
+       </div>
+         `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
           let selectTitle = document.getElementById("winnerAnimatedMovie")
-          selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
+          selectTitle.innerHTML =`${data.Title}`
         })            
       });
     });
@@ -119,26 +148,33 @@ function animatedMovie() {
 
 function foreignFilm() {
     containerMovies.innerHTML=""
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestForeignFilm.forEach(element => {
         fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { containerMovies.innerHTML +=
           `<div id="category-1" class="row white">    
            </div>
-           <div class="tarjetaMovies col s12 m6">
-             <div class="row">
-              <p>${data.Title}<p>
-              <img src=${data.Poster} alt="" class="responsive-img">
-              <button id="star">✩</button>
-             </div>
-            </div>
-           </div>
+        <div class="tarjetaMovies col s12 m6">
+          <div class="card black">
+           <div class="card-img">
+           <img src=${data.Poster} alt="" class="responsive-img">
+          <div class="card-content white-text">
+          <span class="card-title"><strong>${data.Title}</strong></spam>
           </div>
+          <div class="card-action">
+            <a id="star" class="waves-effect waves-light btn black">⭐️</a>
+            </div>
+          </div>
+          </div>
+         </div>
+        </div>
           `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
           let selectTitle = document.getElementById("winnerForeignMovie")
-          selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
+          selectTitle.innerHTML =`${data.Title}`
         }) 
       })
     })
@@ -146,51 +182,70 @@ function foreignFilm() {
 
 function director() {
     containerMovies.innerHTML=""
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestDirector.forEach(element => {
     fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
     .then(res => res.json())
     .then(data => { 
         const movies = data
         containerMovies.innerHTML +=
-          `<div class="wrap">
-          <div class="tarjetaMovies">
-              <h4>${data.Title}</h4>
-              <p>${data.Genre}</p>
-              <img class="imgActor" src="${data.Poster}" alt="poster"></img>
-              <button id="star">✩</button>
-              <h3>${data.Director}</h3>
-          </div>
-          </div>`
+        `<div id="category-1" class="row white">    
+        </div>
+     <div class="tarjetaMovies col s12 m6">
+       <div class="card black">
+        <div class="card-img">
+        <img src=${data.Poster} alt="" class="responsive-img">
+       <div class="card-content white-text">
+       <span class="card-title"><strong>${data.Director}</strong></spam>
+       <p>${data.Genre}</p>
+       </div>
+       <div class="card-action">
+         <a id="star" class="waves-effect waves-light btn black">⭐️</a>
+         </div>
+       </div>
+       </div>
+      </div>
+     </div>
+       `
           let btnStar= document.getElementById("star")
           btnStar.addEventListener('click', () => {              
             let selectTitle = document.getElementById("winnerDirector")
-            selectTitle.innerHTML =`<p style="color:white">${data.Director}</p>`
+            selectTitle.innerHTML =`${data.Director}`
           })
         })
     })
 }
 function actor() {
   containerMovies.innerHTML=""
+  btnSiguiente.style.display = "flex"
+  btnSiguiente.addEventListener('click', pageOne)
   bestActor.forEach(element => {
     fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
       .then(res => res.json())
       .then(data => { 
         containerMovies.innerHTML +=
         `<div id="category-1" class="row white">    
+        </div>
+     <div class="tarjetaMovies col s12 m6">
+       <div class="card black">
+        <div class="card-img">
+        <img src=${data.Poster} alt="" class="responsive-img">
+       <div class="card-content white-text">
+       <span class="card-title"><strong>${data.Title}</strong></spam>
+       </div>
+       <div class="card-action">
+         <a id="star" class="waves-effect waves-light btn black">⭐️</a>
          </div>
-          <div id="tarjetaMovies" class="tarjetaMovies col s12 m6">
-            <div class="row">
-            <p>${data.Title}<p>
-            <img src=${data.Poster} alt="" class="responsive-img">
-            <button id="star">✩</button>
-          </div>
-         </div>
-         </div>
-        </div>`
+       </div>
+       </div>
+      </div>
+     </div>
+       `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
           let selectTitle = document.getElementById("winnerBestActor")
-          selectTitle.innerHTML =`<p style="color:white">Name Actor</p>`
+          selectTitle.innerHTML =`Joaquin Phoenix`
         }) 
         let btnActor = document.getElementById("tarjetaMovies")
         btnActor.addEventListener('click', () => {
@@ -206,33 +261,42 @@ function actor() {
 
 function actrees() {
     containerMovies.innerHTML=""
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestActrees.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { 
           containerMovies.innerHTML +=
           `<div id="category-1" class="row white">    
-           </div>
-           <div class="tarjetaMovies col s12 m6">
-             <div class="row">
-              <p>${data.Title}<p>
-              <img src=${data.Poster} alt="" class="responsive-img">
-              <button id="star">✩</button>
-             </div>
-            </div>
-           </div>
           </div>
-          `
+       <div class="tarjetaMovies col s12 m6">
+         <div class="card black">
+          <div class="card-img">
+          <img src=${data.Poster} alt="" class="responsive-img">
+         <div class="card-content white-text">
+         <span class="card-title"><strong>${data.Title}</strong></spam>
+         </div>
+         <div class="card-action">
+           <a id="star" class="waves-effect waves-light btn black">⭐️</a>
+           </div>
+         </div>
+         </div>
+        </div>
+       </div>
+         `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
           let selectTitle = document.getElementById("winnerBestActress")
-          selectTitle.innerHTML =`<p style="color:white">Name Actricess</p>`
+          selectTitle.innerHTML =`Scarlett Johansson`
         })          
       })  
     })
 }
 function supportingActrees() {
     containerMovies.innerHTML=""
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestSupportingActrees.forEach(element => {
         fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
@@ -240,26 +304,33 @@ function supportingActrees() {
           containerMovies.innerHTML +=
           `<div id="category-1" class="row white">    
            </div>
-           <div class="tarjetaMovies col s12 m6">
-             <div class="row">
-              <p>${data.Title}<p>
-              <img src=${data.Poster} alt="" class="responsive-img">
-              <button id="star">✩</button>
-             </div>
-            </div>
-           </div>
+        <div class="tarjetaMovies col s12 m6">
+          <div class="card black">
+           <div class="card-img">
+           <img src=${data.Poster} alt="" class="responsive-img">
+          <div class="card-content white-text">
+          <span class="card-title"><strong>${data.Title}</strong></spam>
           </div>
+          <div class="card-action">
+            <a id="star" class="waves-effect waves-light btn black">⭐️</a>
+            </div>
+          </div>
+          </div>
+         </div>
+        </div>
           `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
           let selectTitle = document.getElementById("winnerSupportActress")
-          selectTitle.innerHTML =`<p style="color:white">NAme Suporting Actress</p>`
+          selectTitle.innerHTML =`Laura Dern`
         })           
       })  
     })
 }
 function supportingActor() {
   containerMovies.innerHTML=""
+  btnSiguiente.style.display = "flex"
+  btnSiguiente.addEventListener('click', pageOne)
   bestSupportingActor.forEach(element => {
     fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
     .then(res => res.json())
@@ -267,20 +338,26 @@ function supportingActor() {
       console.log(data)
       containerMovies.innerHTML +=
       `<div id="category-1" class="row white">    
+           </div>
+        <div class="tarjetaMovies col s12 m6">
+          <div class="card black">
+           <div class="card-img">
+           <img src=${data.Poster} alt="" class="responsive-img">
+          <div class="card-content white-text">
+          <span class="card-title"><strong>${data.Title}</strong></spam>
+          </div>
+          <div class="card-action">
+            <a id="star" class="waves-effect waves-light btn black">⭐️</a>
+            </div>
+          </div>
+          </div>
+         </div>
         </div>
-        <div id="tarjetaMovies" class="tarjetaMovies col s12 m6">
-          <div class="row">
-          <p>${data.Title}<p>
-          <img src=${data.Poster} alt="" class="responsive-img">
-          <button id="star">✩</button>
-        </div>
-        </div>
-        </div>
-      </div>`
+          `
       let btnStar= document.getElementById("star")
       btnStar.addEventListener('click', () => {              
         let selectTitle = document.getElementById("winnerSupportActor")
-        selectTitle.innerHTML =`<p style="color:white">NAme Suporting Actress</p>`
+        selectTitle.innerHTML =`Brad Pitt`
       }) 
     })
   })
