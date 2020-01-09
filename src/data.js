@@ -63,17 +63,22 @@ function bestMovie() {
         .then(res => res.json())
         .then(data => {
           containerMovies.innerHTML +=
-          `<div id="category-1" class="row white">    
+      `<div id="category-1" class="row white">    
            </div>
-           <div class="tarjetaMovies col s12 m6">
-             <div class="row">
-              <p>${data.Title}<p>
-              <img src=${data.Poster} alt="" class="responsive-img">
-              <button id="star">✩</button>
-             </div>
-            </div>
-           </div>
+        <div class="tarjetaMovies col s12 m6">
+          <div class="card black">
+           <div class="card-img">
+           <img src=${data.Poster} alt="" class="responsive-img">
+          <div class="card-content white-text">
+          <span class="card-title"><strong>${data.Title}</strong></spam>
           </div>
+          <div class="card-action">
+              <button class="btn-flat" id="star"> ⭐️  </button>
+            </div>
+          </div>
+          </div>
+         </div>
+        </div>
           `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
