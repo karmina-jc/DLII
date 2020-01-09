@@ -14,7 +14,7 @@ function bestActorCard (data){
     `<div class="wrap">
       <div class="tarjetaActors">
         <button id="star">✩</button>
-        <img class="imgActor" src="actorsimg/adam-driver-img.jpg" value="tt7653254" alt="poster"></img>
+        <img class="imgActor" src="actorsimg/adam-driver-img.jpg" value="Adam Driver" alt="poster"></img>
       </div>
     </div>`
     } if (data === "tt7286456"){
@@ -22,7 +22,7 @@ function bestActorCard (data){
     `<div class="wrap">
       <div class="tarjetaActors">
         <button id="star">✩</button>
-        <img class="imgActor" src="actorsimg/joaquin-phoenix-img.jpg" value="tt7286456" alt="poster"></img>
+        <img class="imgActor" src="actorsimg/joaquin-phoenix-img.jpg" value="Joaquin Phoenix" alt="poster"></img>
       </div>
     </div>`
     } if (data === "tt2066051"){
@@ -30,7 +30,7 @@ function bestActorCard (data){
     `<div class="wrap">
       <div class="tarjetaActors">
         <button id="star">✩</button>
-        <img class="imgActor" src="actorsimg/taron-egerton-img.jpg" value="tt2066051" alt="poster"></img>
+        <img class="imgActor" src="actorsimg/taron-egerton-img.jpg" value="Taron Egerton" alt="poster"></img>
       </div>
     </div>`
     } if (data === "tt8291806"){
@@ -38,7 +38,7 @@ function bestActorCard (data){
     `<div class="wrap">
       <div class="tarjetaActors">
         <button id="star">✩</button>
-        <img class="imgActor" src="actorsimg/antonio-banderas-img.jpg" value="tt8291806" alt="poster"></img>
+        <img class="imgActor" src="actorsimg/antonio-banderas-img.jpg" value="Antonio Banderas" alt="poster"></img>
       </div>
     </div>`
     }     
@@ -55,27 +55,6 @@ function bestActorCard (data){
         </div>        
       </div>
 */
-
-function actorCard(data) {
-    containerMovies.innerHTML +=
-    `<div class="wrap">
-      <div id="tarjetaActor" class="tarjetaMovies">
-        <h4>${data.Title}</h4>
-        <p>${data.Genre}</p>
-        <button id="star">✩</button>
-        <img class="imgActor" src=${data.Poster} alt="poster"></img>
-      </div>
-    </div>`
-    let btnStar= document.getElementById("star")
-    btnStar.addEventListener('click', () => {              
-        let selectTitle = document.getElementById("winnerBestActor")
-        selectTitle.innerHTML =`<p>${data.Title}</p>`
-    })
-    let btnPoster = document.getElementById("tarjetaActor")
-    btnPoster.addEventListener('click', () => {
-
-    })
-}
 
 function bestMovie() {
     containerMovies.innerHTML=""
@@ -103,7 +82,7 @@ function bestMovie() {
           `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
-          let selectTitle = document.getElementById("winnerMovie")
+          let selectTitle = document.getElementById("winnerBestMovie")
           selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
         })  
       })  
@@ -131,7 +110,7 @@ function animatedMovie() {
           `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
-          let selectTitle = document.getElementById("winnerMovie")
+          let selectTitle = document.getElementById("winnerAnimatedMovie")
           selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
         })            
       });
@@ -158,7 +137,7 @@ function foreignFilm() {
           `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
-          let selectTitle = document.getElementById("winnerMovie")
+          let selectTitle = document.getElementById("winnerForeignMovie")
           selectTitle.innerHTML =`<p style="color:white">${data.Title}</p>`
         }) 
       })
@@ -184,7 +163,7 @@ function director() {
           </div>`
           let btnStar= document.getElementById("star")
           btnStar.addEventListener('click', () => {              
-            let selectTitle = document.getElementById("winnerMovie")
+            let selectTitle = document.getElementById("winnerDirector")
             selectTitle.innerHTML =`<p style="color:white">${data.Director}</p>`
           })
         })
@@ -210,7 +189,7 @@ function actor() {
         </div>`
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
-          let selectTitle = document.getElementById("winnerMovie")
+          let selectTitle = document.getElementById("winnerBestActor")
           selectTitle.innerHTML =`<p style="color:white">Name Actor</p>`
         }) 
         let btnActor = document.getElementById("tarjetaMovies")
@@ -246,7 +225,7 @@ function actrees() {
           `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
-          let selectTitle = document.getElementById("winnerMovie")
+          let selectTitle = document.getElementById("winnerBestActress")
           selectTitle.innerHTML =`<p style="color:white">Name Actricess</p>`
         })          
       })  
@@ -273,7 +252,7 @@ function supportingActrees() {
           `
         let btnStar= document.getElementById("star")
         btnStar.addEventListener('click', () => {              
-          let selectTitle = document.getElementById("winnerMovie")
+          let selectTitle = document.getElementById("winnerSupportActress")
           selectTitle.innerHTML =`<p style="color:white">NAme Suporting Actress</p>`
         })           
       })  
@@ -300,17 +279,9 @@ function supportingActor() {
       </div>`
       let btnStar= document.getElementById("star")
       btnStar.addEventListener('click', () => {              
-        let selectTitle = document.getElementById("winnerMovie")
+        let selectTitle = document.getElementById("winnerSupportActor")
         selectTitle.innerHTML =`<p style="color:white">NAme Suporting Actress</p>`
       }) 
-      let btnActor = document.getElementById("tarjetaMovies")
-      btnActor.addEventListener('click', () => {
-        let divActor = document.getElementById("container")
-        let value = data.imdbID
-        console.log(value)       
-        divActor.innerHTML = ""
-        divActor.innerHTML = bestActorCard(value)    
-      })
     })
   })
 }
