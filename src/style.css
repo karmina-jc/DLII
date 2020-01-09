@@ -1,9 +1,7 @@
 
 .nav-wrapper{
-    color: black;
-    
+    color: black;    
 }
-
 .introText{
     text-align: right;
 }
@@ -14,40 +12,43 @@ body{
     margin: 0%;
     color: black;
 }
-
 .tarjetaMovies{
-    border: 1px solid black;  
-}
-.tarjetaActors{
-  border: 1px solid black;
-  max-width: 200px;
-  cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    max-width: 200px;
+    cursor: pointer;
 }
 .imgActor{
     max-width: 100px;
 }
-
+.tarjetaActors{
+    border: 1px solid white;
+}
+.winnerMovie{
+    color: white;
+}
 .img.responsive-img{
     border-image-width: 24px;
     border-image-slice: 54 85;
     border-image-outset: 6px;
     border-image-repeat: repeat repeat;
-
 }
 #bestFilm, #bestForeignFilm,#bestAnimatedFilm, #bestDirector, #bestActor, #bestActrees, #bestSupportingActrees, #bestSupportingActor {
     background-color:black;
     color: black;
     border-radius: 20%;
-    border-style:dotted;
-   
+    border-style:dotted;   
 }
 .container{
-justify-content: space-between;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 .winners{
     background-image: url("img/win.png");
     color: white;
     text-align: center;
+    
     
 }  
 #compartir{
