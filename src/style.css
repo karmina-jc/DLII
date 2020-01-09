@@ -44,3 +44,24 @@ body{
     flex-flow: row wrap;
     justify-content: space-between;
 }
+.winners{
+    background-image: url("img/win.png");
+    color: white;
+    text-align: center;
+    
+}  
+#compartir{
+    text-align: center;
+} 
+.win{
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.footer{
+    background-color: black;
+}
+.icon{
+    float: right;
+    width: 60px;
+    height: 60px;
+}
