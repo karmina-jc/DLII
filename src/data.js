@@ -81,7 +81,7 @@ function bestMovie() {
     btnSiguiente.style.display = "flex"
     btnSiguiente.addEventListener('click', pageOne);
     bestFilm.forEach(element => {
-        fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+        fetch(`https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => {
           containerMovies.innerHTML +=
@@ -116,7 +116,7 @@ function animatedMovie() {
     btnSiguiente.style.display = "flex"
     btnSiguiente.addEventListener('click', pageOne)
     bestAnimatedFilm.forEach(element => {
-        fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+        fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { 
           containerMovies.innerHTML +=
@@ -151,7 +151,7 @@ function foreignFilm() {
     btnSiguiente.style.display = "flex"
     btnSiguiente.addEventListener('click', pageOne)
     bestForeignFilm.forEach(element => {
-        fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+        fetch(`https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { containerMovies.innerHTML +=
           `<div id="category-1" class="row white">    
@@ -185,7 +185,7 @@ function director() {
     btnSiguiente.style.display = "flex"
     btnSiguiente.addEventListener('click', pageOne)
     bestDirector.forEach(element => {
-    fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+    fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
     .then(res => res.json())
     .then(data => { 
         const movies = data
@@ -221,7 +221,7 @@ function actor() {
   btnSiguiente.style.display = "flex"
   btnSiguiente.addEventListener('click', pageOne)
   bestActor.forEach(element => {
-    fetch(`http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+    fetch(`https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
       .then(res => res.json())
       .then(data => { 
         containerMovies.innerHTML +=
@@ -264,7 +264,7 @@ function actrees() {
     btnSiguiente.style.display = "flex"
     btnSiguiente.addEventListener('click', pageOne)
     bestActrees.forEach(element => {
-        fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+        fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => { 
           containerMovies.innerHTML +=
@@ -298,7 +298,7 @@ function supportingActrees() {
     btnSiguiente.style.display = "flex"
     btnSiguiente.addEventListener('click', pageOne)
     bestSupportingActrees.forEach(element => {
-        fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+        fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
         .then(data => {
           containerMovies.innerHTML +=
@@ -332,7 +332,7 @@ function supportingActor() {
   btnSiguiente.style.display = "flex"
   btnSiguiente.addEventListener('click', pageOne)
   bestSupportingActor.forEach(element => {
-    fetch(` http://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
+    fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
