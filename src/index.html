@@ -11,123 +11,124 @@
 </head>
 <body>
   <header class="black" src="img/fondoDivBtn.png">
-      <div class="row">
-          <div class="col s6 m3 ">
-              <a href="" class="brand-logo"><img class="logo" src="img/logo.png" width="310" height="100"></a>
-          </div>
-   
+    <div class="row">
+      <div class="col s6 m3 ">
+          <a href="" class="brand-logo"><img class="logo" src="img/logo.png" width="310" height="100"></a>
+      </div>   
     <div class="introText">
       <p></p>
     </div>
-
   </header>
-  
-  <main >
-    <section id="movies" class="moviesBtn  col s8"  >      
-      <div id="container" class="container">
-      <div class="row">   
-      <div class="col s12 m3 bg-bestfilm">
-          <button id="bestFilm"><img class=" border-color-black responsive-img" src="img/picture.jpg"></button>
-      </div>
-      <div class="col s12 m3">
-          <button id="bestForeignFilm"><img class="responsive-img "src="img/language.jpg"></button>
-      </div>     
-      <div class="col s12 m3">
-          <button id="bestAnimatedFilm"><img class="responsive-img"src="img/animated.jpg"></button>
-      </div>      
-      <div class="col 12 m3">
-          <button id="bestDirector"><img class="responsive-img"src="img/directing.jpg"></button>        
-      </div>      
-      <div class="col s12 m3">
-          <button id="bestActor"><img class=" responsive-img"src="img/actor.jpg"></button>
-      </div>
-      <div class="col s12 m3">
-          <button id="bestActrees"><img class=" responsive-img" src="img/actress.jpg"></button>        
-      </div>
-      <div class="col s12 m3">
-          <button id="bestSupportingActrees"><img class="responsive-img" src="img/s-actress.jpg"></button> 
-      </div>
-      <div class="col s12 m3">
-        <button id="bestSupportingActor"><img class="responsive-img" src="img/s-actor.jpg"></button>
-      </div>
-    </div>
-  </div>
-     </section>
-    </div>
-   <div class="row">
-    <a id="siguiente" class="waves-effect waves-light yellow black-text btn right" href="" style="display:none">Siguiente Categoria →</a>
-   </div>
-  <section id="selection" class="row">
+  <main class="container">
+    <div class="row">
+      <section id="allNominees" class="col s6">      
+        <div class="btnMovies col s6">         
+          <button id="bestFilm"><img class="responsive-img" src="img/picture.jpg">
+          </button>
+        </div>
+        <div class="btnMovies col s6"> 
+          <button id="bestForeignFilm"><img class="responsive-img "src="img/language.jpg">
+          </button>
+        </div> 
+        <div class="btnMovies col s6"> 
+          <button id="bestAnimatedFilm"><img class="responsive-img"src="img/animated.jpg">
+          </button>
+        </div>
+        <div class="btnMovies col s6"> 
+          <button id="bestDirector"><img class="responsive-img"src="img/directing.jpg">
+          </button>
+        </div>
+        <div class="btnMovies col s6"> 
+          <button id="bestActor"><img class=" responsive-img"src="img/actor.jpg">
+          </button>
+        </div>
+        <div class="btnMovies col s6"> 
+          <button id="bestActrees"><img class=" responsive-img" src="img/actress.jpg">
+          </button>
+        </div>
+        <div class="btnMovies col s6"> 
+          <button id="bestSupportingActrees"><img class="responsive-img" src="img/s-actress.jpg">
+          </button> 
+        </div>
+        <div class="btnMovies col s6"> 
+          <button id="bestSupportingActor"><img class="responsive-img" src="img/s-actor.jpg">
+          </button>
+        </div>
+      </section>
+      <section class="selection row s6">
+        <div class="winners col s10 m3">
+          <div class="card-panel grey darken-4">
+            <span class="white-text">Best Picture</span>
+            <span id="winnerBestMovie" class="white-text">✮</span>
+          </div>         
+        </div>
+        <div class="winners col s10 m3">
+          <div class="card-panel grey darken-4">
+            <span class="white-text">Foreign Language</span>
+            <span id="winnerForeignMovie" class="white-text">✮</span>
+          </div>
+        </div>
+        <div class="winners col s10 m3">
+          <div class="card-panel grey darken-4">
+            <span class="white-text">Animated Feature</span>
+            <span id="winnerAnimatedMovie" class="white-text">✮</span>
+          </div>
+        </div>  
+        <div class="winners col s10 m3">
+          <div class="card-panel grey darken-4">
+            <span class="white-text">Directing</span>
+            <span id="winnerDirector" class="white-text">✮</span>
+          </div>
+        </div>
+        <div class="winners col s10 m3">
+          <div class="card-panel grey darken-4">
+            <span class="white-text">Actor</span>
+            <span class="white-text">In a Leading Rol</span>
+            <span id="winnerBestActor" class="white-text">✮</span>
+          </div>
+        </div>
+        <div class=" winners col s10 m3">
+          <div class="card-panel grey darken-4">
+            <span class="white-text">Actress</span>
+            <span class="white-text">In a Leading Rol</span>
+            <span id="winnerBestActress" class="white-text">✮</span>
+          </div>
+        </div>
+        <div class=" winners col s10 m3">
+          <div class="card-panel grey darken-4">
+            <span class="white-text">Actress</span>
+            <span class="white-text">In a Supoorting Rol</span>
+            <span id="winnerSupportActress" class="white-text">✮</span>
+          </div>
+        </div>
+        <div class=" winners col s10 m3">
+          <div class="card-panel grey darken-4">
+            <span class="white-text">Actor</span>
+            <span class="white-text">In a Supoorting Rol</span>
+            <span id="winnerSupportActor" class="white-text">✮</span>
+          </div>
+        </div> 
+      </section>
+    </div>   
+  </main>
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
-
-      <div class="winners col s12 m3">
-        <h6>Best Picture</h6>
-        <h5 class="win" id="winnerBestMovie">?</h5>
-      </div>
-      <div class="winners col s12 m3">
-        <h6>Foreign Language</h6>
-        <h5 class="win" id="winnerForeignMovie">?</h5>
-      </div>
-     <div class="winners col s12 m3">
-      <h6>Animated Feature</h6>
-      <h5 class="win" id="winnerAnimatedMovie">?</h5>
-      </div>  
-      <div class="winners col s12 m3">
-        <h6>Directing</h6>
-        <h5 class="win" id="winnerDirector">?</h5>
-      </div>
-      <div class="winners col s12 m3">
-        <h6>Actor</h6>
-        <h6>In a Leading Rol</h6>
-        <h5 class="win" id="winnerBestActor">?</h5>
-      </div>
-      <div class=" winners col s12 m3">
-        <h6>Actress</h6>
-        <h6>In a Leading Rol</h6>
-
-        <h5 class="win" id="winnerBestActress">?</h5>
-      </div>
-      <div class=" winners col s12 m3">
-        <h6>Actress</h6>
-        <h6>in a Supoorting Rol</h6>
-
-        <h5 class="win" id="winnerSupportActress">?</h5>
-      </div>
-      <div class=" winners col s12 m3">
-        <h6>Actor</h6>
-        <h6>in a Supporting Rol</h6>
-        <h5 class="win" id="winnerSupportActor">?</h5>
-      </div>
-    </div>
-    </div>
-  </div>
-  </section>
-    <div>
- </main>
-    </div>    
-    <footer class="page-footer footer">
-      <div class="share">
-           <div class="container" id="compartir">
-              <h6>Now that you have chosen each winner, share you predictions with friends</h6>
-          
-          <div class="iconos">
+        <div class="col m7 s12">
+          <h6 class="white-text">Now that you have chosen each winner, share you predictions with friends</h6>
+        </div>
+        <div class="icons col m4 s12">
           <img class="icon" src="img/instagram.png" alt="insta">
           <img class="icon" src="img/facebook.png" alt="facebook">
           <img class="icon" src="img/twitter.png" alt="twitter">
           <img class="icon" src="img/pinterest.png" alt="pinterest">
         </div>
       </div>
-        </div>
-      </footer>
-    
- 
-  
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
-  
-  <div id="root"></div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+
   <script type="module" src="main.js"></script>
 </body>
 </html>
