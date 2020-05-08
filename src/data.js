@@ -6,14 +6,15 @@ const bestActor = ["tt7653254", "tt7286456", "tt2066051", "tt8291806"]
 const bestActrees = ["tt7653254", "tt3281548", "tt6394270", "tt7549996"]
 const bestSupportingActrees = ["tt7653254", "tt3281548", "tt8637428", "tt6394270"]
 const bestSupportingActor = ["tt1302006", "tt7131622", "tt3224458", "tt8404614"]
-const buttonMovies = document.getElementById("buttonMovies")
+const buttonMovies = document.getElementById("buttonMovies");
 const containerMovies = document.getElementById("allNominees");
 const btnSiguiente = document.getElementById("siguiente");
+const chooseedSelection = document.getElementById('selection');
 
 const cardMovies = (data, id) => { 
   buttonMovies.style.display = "none"
   containerMovies.innerHTML +=
-    `<div class="col s4 m3">
+    `<div class="col s12 m4 l3">
       <div class="card medium">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src=${data.Poster}>
@@ -22,7 +23,7 @@ const cardMovies = (data, id) => {
           <span class="card-title activator grey-text text-darken-4">${data.Title.slice(0, 24)}
           <i class="material-icons right">more_vert</i>
           </span>
-          <a id="star" value=${data.Title} class="waves-effect waves-light yellow black-text btn">Choose Me!</a>
+          <a id="star" value='${data.Title}' class="waves-effect waves-light yellow black-text btn">Choose Me!</a>
         </div>
         <div class="card-reveal">
           <span id="indCard" class="card-title grey-text text-darken-4">${data.Title}<i class="material-icons right">close</i></span>
@@ -33,12 +34,10 @@ const cardMovies = (data, id) => {
   `
   let btnStar = document.querySelectorAll("#star")
   btnStar.forEach((item) => {
-    console.log(item)
-    item.addEventListener('click', (e) => {
-    console.log(e)
-    let movieTitle = document.getElementById("indCard").textContent      
+    item.addEventListener('click', (e) => {  
+    let movieTitle = e.target.attributes[1].value     
     let selectTitle = document.getElementById(id)
-    selectTitle.innerHTML = movieTitle.substring(0, movieTitle.length - 5)
+    selectTitle.innerHTML = movieTitle
   }) 
   })            
 }

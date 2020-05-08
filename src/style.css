@@ -44,7 +44,8 @@ section button {
     background-size: cover;
     color: white;
     text-align: center;
-    padding: 15% 5%;
+    padding: 16% 5%;
+    font-size: 12px;
 }
 .page-footer {
     background-color: black;
