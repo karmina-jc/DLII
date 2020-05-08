@@ -6,32 +6,40 @@ const bestActor = ["tt7653254", "tt7286456", "tt2066051", "tt8291806"]
 const bestActrees = ["tt7653254", "tt3281548", "tt6394270", "tt7549996"]
 const bestSupportingActrees = ["tt7653254", "tt3281548", "tt8637428", "tt6394270"]
 const bestSupportingActor = ["tt1302006", "tt7131622", "tt3224458", "tt8404614"]
+const buttonMovies = document.getElementById("buttonMovies")
 const containerMovies = document.getElementById("allNominees");
 const btnSiguiente = document.getElementById("siguiente");
 
 const cardMovies = (data, id) => { 
-    containerMovies.innerHTML +=
-    `<div class="col s6">
+  buttonMovies.style.display = "none"
+  containerMovies.innerHTML +=
+    `<div class="col s4 m3">
       <div class="card medium">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src=${data.Poster}>
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">${data.Title.slice(0, 24)}<i class="material-icons right">more_vert</i></span>
-          <a id="star" class="waves-effect waves-light yellow black-text btn">Choose Me!</a>
+          <span class="card-title activator grey-text text-darken-4">${data.Title.slice(0, 24)}
+          <i class="material-icons right">more_vert</i>
+          </span>
+          <a id="star" value=${data.Title} class="waves-effect waves-light yellow black-text btn">Choose Me!</a>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">${data.Title}<i class="material-icons right">close</i></span>
+          <span id="indCard" class="card-title grey-text text-darken-4">${data.Title}<i class="material-icons right">close</i></span>
           <p>${data.Plot}</p>
         </div>
       </div>
     </div>     
   `
-  let btnStar= document.getElementById("star")
-  btnStar.addEventListener('click', (e) => {
-    console.log(e)           
+  let btnStar = document.querySelectorAll("#star")
+  btnStar.forEach((item) => {
+    console.log(item)
+    item.addEventListener('click', (e) => {
+    console.log(e)
+    let movieTitle = document.getElementById("indCard").textContent      
     let selectTitle = document.getElementById(id)
-    selectTitle.innerHTML =`${e.value}`
+    selectTitle.innerHTML = movieTitle.substring(0, movieTitle.length - 5)
+  }) 
   })            
 }
 
@@ -72,40 +80,15 @@ function bestActorCard (data){
 }
 
 function pageOne(){
-  containerMovies.innerHTML = 
-  `<div class="row">   
-  <div class="col s12 m3 bg-bestfilm">
-      <button id="bestFilm"><img class=" border-color-black responsive-img " src="img/picture.jpg"></button>
-  </div>
-  <div class="col s12 m3">
-      <button id="bestForeignFilm"><img class="responsive-img "src="img/language.jpg"></button>
-  </div>     
-  <div class="col s12 m3">
-      <button id="bestAnimatedFilm"><img class="responsive-img"src="img/animated.jpg"></button>
-  </div>      
-  <div class="col 12 m3">
-      <button id="bestDirector"><img class="responsive-img"src="img/directing.jpg"></button>        
-  </div>      
-  <div class="col s12 m3">
-      <button id="bestActor"><img class=" responsive-img"src="img/actor.jpg"></button>
-  </div>
-  <div class="col s12 m3">
-      <button id="bestActrees"><img class=" responsive-img" src="img/actress.jpg"></button>        
-  </div>
-  <div class="col s12 m3">
-      <button id="bestSupportingActrees"><img class="responsive-img" src="img/s-actress.jpg"></button> 
-  </div>
-  <div class="col s12 m3">
-    <button id="bestSupportingActor"><img class="responsive-img" src="img/s-actor.jpg"></button>
-  </div>`
-  
-  //btnSiguiente.style.display = "none"
+  buttonMovies.style.display = "block"  
+  btnSiguiente.style.display = "none"
+  containerMovies.innerHTML = ''
 }
 
 function bestMovie() {
     containerMovies.innerHTML=""
-    //btnSiguiente.style.display = "flex"
-    //btnSiguiente.addEventListener('click', pageOne);
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne);
     bestFilm.forEach(element => {
         fetch(`https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
@@ -115,8 +98,8 @@ function bestMovie() {
 
 function animatedMovie() {
     containerMovies.innerHTML=""
-    //btnSiguiente.style.display = "flex"
-    //btnSiguiente.addEventListener('click', pageOne)
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestAnimatedFilm.map(element => {
         fetch(`https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
@@ -126,8 +109,8 @@ function animatedMovie() {
 
 function foreignFilm() {
     containerMovies.innerHTML=""
-    //btnSiguiente.style.display = "flex"
-   // btnSiguiente.addEventListener('click', pageOne)
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestForeignFilm.forEach(element => {
         fetch(`https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
@@ -137,8 +120,8 @@ function foreignFilm() {
 
 function director() {
     containerMovies.innerHTML=""
-    //btnSiguiente.style.display = "flex"
-    //btnSiguiente.addEventListener('click', pageOne)
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestDirector.forEach(element => {
     fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
     .then(res => res.json())
@@ -147,8 +130,8 @@ function director() {
 }
 function actor() {
   containerMovies.innerHTML=""
-  //btnSiguiente.style.display = "flex"
-  //btnSiguiente.addEventListener('click', pageOne)
+  btnSiguiente.style.display = "flex"
+  btnSiguiente.addEventListener('click', pageOne)
   bestActor.forEach(element => {
     fetch(`https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
       .then(res => res.json())
@@ -158,8 +141,8 @@ function actor() {
 
 function actrees() {
   containerMovies.innerHTML=""
-  // btnSiguiente.style.display = "flex"
-  //btnSiguiente.addEventListener('click', pageOne)
+  btnSiguiente.style.display = "flex"
+  btnSiguiente.addEventListener('click', pageOne)
   bestActrees.forEach(element => {
         fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
@@ -168,8 +151,8 @@ function actrees() {
 }
 function supportingActrees() {
     containerMovies.innerHTML=""
-    //btnSiguiente.style.display = "flex"
-    //btnSiguiente.addEventListener('click', pageOne)
+    btnSiguiente.style.display = "flex"
+    btnSiguiente.addEventListener('click', pageOne)
     bestSupportingActrees.forEach(element => {
         fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
         .then(res => res.json())
@@ -178,8 +161,8 @@ function supportingActrees() {
 }
 function supportingActor() {
   containerMovies.innerHTML=""
-  //btnSiguiente.style.display = "flex"
-  //btnSiguiente.addEventListener('click', pageOne)
+  btnSiguiente.style.display = "flex"
+  btnSiguiente.addEventListener('click', pageOne)
   bestSupportingActor.forEach(element => {
     fetch(` https://www.omdbapi.com/?i=${element}&apikey=46ccb234`)
     .then(res => res.json())
