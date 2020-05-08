@@ -1,90 +1,58 @@
-
 .nav-wrapper{
-    color: black;    
+    color: #1b1b1b;    
 }
 .introText{
     text-align: right;
 }
 body{
-	background:black;
+	background:#212121;
 }
-.sectionMovies{
-    margin: 0%;
-    color: black;
+section button {
+    cursor: pointer;    
 }
-.tarjetaMovies{
-    color: white;
-    max-width: 200px;
-    cursor: pointer;
+.btnMovies {
+    margin-bottom: 2%;
+} 
+.responsive-img {
+    border-radius: 25px;
+    padding: 2%;
+    opacity: 0.8;   
+}
+.card {
+    border-radius: 10px;
 }
 .imgActor{
     max-width: 100px;
 }
-.tarjetaActors{
-    border: 1px solid white;
-}
 .winnerMovie{
     color: white;
 }
-.img.responsive-img{
-    border-image-width: 24px;
-    border-image-slice: 54 85;
-    border-image-outset: 6px;
-    border-image-repeat: repeat repeat;
-}
-#bestFilm, #bestForeignFilm,#bestAnimatedFilm, #bestDirector, #bestActor, #bestActrees, #bestSupportingActrees, #bestSupportingActor {
+#bestFilm, #bestForeignFilm, #bestAnimatedFilm, #bestDirector, #bestActor, #bestActrees, #bestSupportingActrees, #bestSupportingActor {
     background-color:black;
-    color: black;
+    background-size: cover; 
     border-radius: 20%;
-    border-style:dotted;   
-}
-.container{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    border-style: dotted;   
 }
 .container button{
     margin: 5px;
 }
-.winners{
+.card-panel {
+    display: flex;
+    flex-direction: column;
     background-image: url("img/win.png");
     background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     text-align: center;
-}  
-.winners h5{
-    font-size: 15px;
-    padding: none;
-    border: none;
-    margin: none;
-} 
-.winners h6{
-    font-size: 20px;
-} 
-#compartir{
-    text-align: center;
-} 
-.win{
-    padding: 35px;
-    
+    padding: 16% 5%;
+    font-size: 12px;
 }
-.footer{
+.page-footer {
     background-color: black;
 }
 .icon{
-    float: right;
-    width: 60px;
-    height: 60px;
-}
-
-p{
-color:white;
-font-size: 12;
-}
-
-.page-footer{
-    background-color:black;
-}
-.iconos{
-    size: 20px 20px;
+    width: 15%;
+    height: 15%;
+    margin: 3%;
+    border-radius: 10px;
 }
